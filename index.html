@@ -1,86 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Skillatinaya Workshops</title>
-<link rel="stylesheet" href="styles.css">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skillatinaya | Learn, Practice, Get Certified</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<header>
-  <nav>
-    <div class="logo">Skillatinaya</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#workshops">Workshops</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="https://rzp.io/rzp/skillatinayadatascience" target="_blank" class="btn-register">Register</a></li>
-    </ul>
-    <div class="burger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </nav>
-</header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Skillatinaya Logo" class="logo-img">
+            <span class="logo-text">Skillatinaya</span> 
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#workshops">Workshops</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#register" class="btn-nav">Register</a>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
 
-<section id="home" class="hero" data-aos="fade-up">
-  <div class="hero-text">
-    <h1>Learn, Practice, Get Certified</h1>
-    <p>Hands-on workshops for college students in AI, ML, Python and more.</p>
-    <a href="https://rzp.io/rzp/skillatinayadatascience" target="_blank" class="btn">Register Now</a>
-  </div>
-  <div class="hero-image">
-    <img src="images/hero.jpg" alt="Workshops">
-  </div>
-</section>
+    <header id="hero" class="hero-section">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Learn, Practice,<br> Get <span class="highlight-text">Certified</span></h1>
+                <p>Hands-on workshops for college students in AI, ML, and Python. <br><strong>Uniquely offering both Physical & E-Certificates upon completion.</strong></p>
+                <div class="hero-btns">
+                    <a href="#register" class="btn-primary">Register Now</a>
+                    <a href="#workshops" class="btn-secondary">View Topics</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/hero-students.jpg" alt="Students learning in workshop">
+            </div>
+        </div>
+    </header>
 
-<section id="about" data-aos="fade-right">
-  <div class="container">
-    <h2>About Us</h2>
-    <p>Skillatinaya Workshops bridges the gap between academics and industry with practical skill-building workshops.</p>
-    <img src="images/about.jpg" alt="About Image">
-  </div>
-</section>
+    <section id="about" class="about-section">
+        <div class="container about-content">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>Skillatinaya Workshops bridges the gap between academics and industry with practical skill-building sessions.</p>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-award"></i>
+                        <div>
+                            <h4>Dual Certification</h4>
+                            <small>Get a hardcopy Physical Certificate & E-Certificate.</small>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <div>
+                            <h4>Hands-on Coding</h4>
+                            <small>Real-world projects, not just theory.</small>
+                        </div>
+                    </div>
+                </div>
 
-<section id="workshops" data-aos="fade-left">
-  <h2>Our Workshops</h2>
-  <div class="workshop-cards">
-    <div class="card">
-      <img src="images/python.jpg" alt="Python">
-      <h3>Python for Beginners</h3>
-      <p>Learn Python from scratch with projects and certification.</p>
-      <a href="https://rzp.io/rzp/skillatinayadatascience" target="_blank" class="btn">Register</a>
-    </div>
-    <div class="card">
-      <img src="images/datascience.jpg" alt="Data Science">
-      <h3>Data Science & ML</h3>
-      <p>Hands-on machine learning workshops with real-life datasets.</p>
-      <a href="https://rzp.io/rzp/skillatinayadatascience" target="_blank" class="btn">Register</a>
-    </div>
-    <div class="card">
-      <img src="images/ai.jpg" alt="AI">
-      <h3>AI & Computer Vision</h3>
-      <p>Deep dive into AI projects using CNN and OpenCV.</p>
-      <a href="https://rzp.io/rzp/skillatinayadatascience" target="_blank" class="btn">Register</a>
-    </div>
-  </div>
-</section>
+            </div>
+            <div class="about-image">
+                <img src="assets/about-image.jpg" alt="Students working together">
+            </div>
+        </div>
+    </section>
 
-<section id="contact" data-aos="fade-up">
-  <h2>Contact & Register</h2>
-  <p>Email us at <a href="mailto:info@skillatinaya.com">info@skillatinaya.com</a></p>
-  <p>Or register via <a href="https://rzp.io/rzp/skillatinayadatascience" target="_blank">Payment Link</a></p>
-</section>
+    <section id="workshops" class="workshops-section">
+        <div class="container">
+            <h2 class="section-title">Our Workshops</h2>
+            <div class="cards-grid">
+                
+                <div class="card">
+                    <div class="icon-box">
+                        <img src="assets/python-workshop.png" alt="Python Logo" class="workshop-icon">
+                    </div>
+                    <h3>Python for Beginners</h3>
+                    <p>Master Python from scratch with hands-on projects.</p>
+                    
+                    <div class="cert-badge">
+                        <i class="fas fa-medal"></i> Physical & E-Certificate
+                    </div>
 
-<footer>
-  <p>© 2025 Skillatinaya Workshops</p>
-</footer>
+                    <div class="card-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>Oct 15 - 16, 2025</span>
+                    </div>
+                </div>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="script.js"></script>
+                <div class="card">
+                    <div class="icon-box">
+                        <img src="assets/data-science-workshop.png" alt="Data Science Icon" class="workshop-icon">
+                    </div>
+                    <h3>Data Science & ML</h3>
+                    <p>Learn audience metrics and technical foundations of ML.</p>
+                    
+                    <div class="cert-badge">
+                        <i class="fas fa-medal"></i> Physical & E-Certificate
+                    </div>
+
+                    <div class="card-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>Oct 22 - 23, 2025</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="icon-box">
+                        <img src="assets/ai-workshop.png" alt="AI Brain Icon" class="workshop-icon">
+                    </div>
+                    <h3>AI & Computer Vision</h3>
+                    <p>Deep dive into Neural Networks and Computer Vision magic.</p>
+                    
+                    <div class="cert-badge">
+                        <i class="fas fa-medal"></i> Physical & E-Certificate
+                    </div>
+
+                    <div class="card-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>Oct 29 - 30, 2025</span>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="center-btn">
+                <a href="#register" class="btn-primary-large">Secure Your Spot</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h3>Skillatinaya</h3>
+            <p>Empowering students with industry-ready skills.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Skillatinaya. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

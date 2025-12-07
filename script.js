@@ -5,11 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.getElementById('navLinks');
 
     if (hamburger && navLinks) {
+        // Toggle the 'active' class on click
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
 
-        // Close menu when a link is clicked on mobile
+        // Close menu when a link is clicked on mobile (better UX)
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 if (navLinks.classList.contains('active')) {
@@ -23,11 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 2. Smooth Scrolling for Navbar Links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            // Prevent default jump behavior
             e.preventDefault();
+            
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
+                // Use smooth scrolling
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
@@ -39,9 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
+            // Darker background when scrolling down
             navbar.style.background = 'rgba(74, 0, 224, 0.95)';
             navbar.style.boxShadow = '0 4px 10px rgba(0,0,0,0.15)';
         } else {
+            // Transparent background at the top
             navbar.style.background = 'transparent';
             navbar.style.boxShadow = 'none';
         }
@@ -53,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         queryForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Check if callback was requested using the checkbox ID
+            // Logic to check if the callback checkbox was selected
             const callbackCheckbox = document.getElementById('callback');
             const callbackRequested = callbackCheckbox ? callbackCheckbox.checked : false;
             
@@ -63,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                  alert("Query submitted successfully! We will respond to your email.");
             }
 
-            // In a live environment, form data would be sent to a server here.
+            // Reset the form fields
             queryForm.reset();
         });
     }

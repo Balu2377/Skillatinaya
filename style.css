@@ -1,6 +1,5 @@
 /* --- 1. Global Variables & Reset --- */
 :root {
-    /* Define colors based on a dark, vibrant scheme */
     --primary-purple: #4A00E0;
     --secondary-purple: #8E2DE2;
     --accent-pink: #F05F9A;
@@ -22,10 +21,23 @@ html {
     scroll-behavior: smooth;
 }
 
+/* --- UPDATED BODY STYLE FOR FULL BACKGROUND IMAGE --- */
 body {
-    background-color: var(--white);
+    background-image: url('website-bg.jpg'); /* 🚨 CHANGE THIS FILENAME IF NEEDED! 🚨 */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scroll due to shapes */
+    overflow-x: hidden;
+    color: var(--text-dark);
+}
+
+/* --- Content sections to make text legible against the background image --- */
+.about-section, 
+.workshops-section, 
+.registration-section, 
+.contact-form-section {
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white overlay */
 }
 
 a {
@@ -115,7 +127,6 @@ ul {
     height: 45px;
     width: auto;
     margin-right: 10px;
-    /* Removed filter: brightness(0) invert(1) to allow colored logos */
 }
 
 .logo-text {
@@ -152,7 +163,7 @@ ul {
 }
 
 .hamburger {
-    display: none; /* Hidden by default on desktop */
+    display: none;
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -219,7 +230,7 @@ ul {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Floating Shapes for Visual Interest */
+/* Floating Shapes */
 .floating-shape {
     position: absolute;
     background: rgba(255, 255, 255, 0.1);
@@ -260,7 +271,6 @@ ul {
 /* --- 4. About Us Section --- */
 .about-section {
     padding: 80px 0;
-    background-color: var(--white);
 }
 
 .about-content {
@@ -330,7 +340,6 @@ ul {
 /* --- 5. Workshops Section --- */
 .workshops-section {
     padding: 80px 0;
-    background: #f7f7f7;
 }
 
 .cards-grid {
@@ -435,7 +444,6 @@ ul {
 /* --- 6. Registration Links Section --- */
 .registration-section {
     padding: 80px 50px;
-    background-color: var(--white);
     text-align: center;
 }
 
@@ -483,7 +491,6 @@ ul {
 
 /* --- 7. Contact Form Section --- */
 .contact-form-section {
-    background: #f7f7f7;
     padding: 80px 50px;
     text-align: center;
 }
@@ -543,6 +550,26 @@ ul {
     width: 100%;
 }
 
+/* Styles for the Callback Checkbox */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-top: 5px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.checkbox-group label {
+    font-weight: 500;
+    margin-bottom: 0;
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
 
 /* --- 8. Footer --- */
 footer {
@@ -589,13 +616,12 @@ footer {
 
 /* Tablet Styles (Max width 992px) */
 @media (max-width: 992px) {
-    /* General Layout Adjustments */
     .container {
         padding: 0 25px;
     }
     
     .registration-links-grid {
-        grid-template-columns: 1fr; /* Stack registration links */
+        grid-template-columns: 1fr;
     }
 }
 
@@ -605,7 +631,7 @@ footer {
         padding: 15px 25px;
     }
 
-    /* Hide standard links and show mobile menu */
+    /* Mobile Menu Display */
     .nav-links, .btn-nav {
         display: none; 
     }
@@ -615,7 +641,6 @@ footer {
         color: var(--white);
     }
     
-    /* Mobile Menu Dropdown */
     .nav-links.active {
         display: flex;
         flex-direction: column;
@@ -642,7 +667,7 @@ footer {
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
-    /* Hero Section Stacking */
+    /* Hero/About Section Stacking */
     .hero-section {
         min-height: 80vh;
         padding: 100px 25px 50px 25px;
@@ -668,18 +693,8 @@ footer {
         max-width: 90%;
     }
 
-    .hero-image img, .about-image img {
-        max-width: 100%;
-        border-radius: 20px;
-    }
-
     .hero-btns {
         justify-content: center;
-    }
-    
-    /* About Section */
-    .about-section {
-        padding: 50px 25px;
     }
     
     .features-list {
@@ -698,7 +713,7 @@ footer {
     }
     
     .cards-grid {
-        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-columns: 1fr;
         gap: 25px;
     }
 
@@ -706,7 +721,7 @@ footer {
         min-height: auto;
     }
 
-    /* Contact & Registration Forms */
+    /* Form Section Adjustments */
     .contact-form-section, .registration-section {
         padding: 50px 25px;
     }

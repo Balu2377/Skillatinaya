@@ -15,14 +15,15 @@
             <img src="logo.png.jpeg" alt="Skillatinaya Logo" class="logo-img">
             <span class="logo-text">Skillatinaya</span> 
         </div>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#workshops">Workshops</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#registration-options">Register</a></li>
+            <li><a href="#contact-form">Contact</a></li>
         </ul>
-        <a href="#register" class="btn-nav">Register</a>
-        <div class="hamburger">
+        <a href="#registration-options" class="btn-nav">Register</a>
+        <div class="hamburger" id="hamburger">
             <i class="fas fa-bars"></i>
         </div>
     </nav>
@@ -35,9 +36,9 @@
         <div class="container hero-content">
             <div class="hero-text">
                 <h1>Learn, Practice,<br> Get <span class="highlight-text">Certified</span></h1>
-                <p>Hands-on workshops for students and Working Professionals in Advanced Technologies with tools . <br><strong>Uniquely offering both Physical & E-Certificates upon completion to your door step.</strong></p>
+                <p>Hands-on workshops for students and Working Professionals in Advanced Technologies with tools. <br><strong>Uniquely offering both Physical & E-Certificates upon completion to your doorstep.</strong></p>
                 <div class="hero-btns">
-                    <a href="#register" class="btn-primary">Register Now</a>
+                    <a href="#registration-options" class="btn-primary">Register Now</a>
                     <a href="#workshops" class="btn-secondary">View Topics</a>
                 </div>
             </div>
@@ -51,21 +52,30 @@
         <div class="container about-content">
             <div class="about-text">
                 <h2>About Us</h2>
-                <p>Skillatinaya Workshops bridges the gap between academics and industry with practical skill-building sessions with the currently working professionals mentors.</p>
+                <p>Skillatinaya Workshops bridges the crucial gap between academic knowledge and industry demands. We are driven by a mission to empower students and professionals with **job-ready, practical skills** in cutting-edge technologies like AI, Data Science, and Python.</p>
+                
+                <p>Our sessions are led by **currently working professional mentors** who bring real-world case studies and project methodologies directly into the classroom. We focus on true hands-on experience, ensuring every participant leaves with a tangible portfolio and the confidence to apply their learning immediately.</p>
                 
                 <div class="features-list">
                     <div class="feature-item">
                         <i class="fas fa-award"></i>
                         <div>
                             <h4>Dual Certification</h4>
-                            <small>Get a hardcopy Physical Certificate & E-Certificate.</small>
+                            <small>Get a hardcopy Physical Certificate & E-Certificate delivered to your doorstep.</small>
                         </div>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-laptop-code"></i>
                         <div>
                             <h4>Hands-on Coding</h4>
-                            <small>Real-world projects, not just theory.</small>
+                            <small>Real-world projects, live coding environments, and portfolio-building exercises.</small>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-user-tie"></i>
+                        <div>
+                            <h4>Expert Mentorship</h4>
+                            <small>Learn from mentors who are currently working in top industry roles.</small>
                         </div>
                     </div>
                 </div>
@@ -84,11 +94,19 @@
                 
                 <div class="card">
                     <div class="icon-box">
-                        <img src="assets/python-workshop.png" alt="Python Logo" class="workshop-icon">
+                        <img src="python.png.jpeg" alt="Python Logo" class="workshop-icon">
                     </div>
                     <h3>Python for Beginners</h3>
-                    <p>Master Python from scratch with hands-on projects.</p>
                     
+                    <div class="detailed-description">
+                        <p>Master **foundational to intermediate Python concepts** with practical implementation.</p>
+                        <ul>
+                            <li><i class="fas fa-code"></i> Data Structures & Algorithms</li>
+                            <li><i class="fas fa-file-code"></i> Object-Oriented Programming (OOP)</li>
+                            <li><i class="fas fa-tools"></i> Introduction to Key Libraries (NumPy, Pandas)</li>
+                        </ul>
+                    </div>
+
                     <div class="cert-badge">
                         <i class="fas fa-medal"></i> Physical & E-Certificate
                     </div>
@@ -101,10 +119,18 @@
 
                 <div class="card">
                     <div class="icon-box">
-                        <img src="assets/data-science-workshop.png" alt="Data Science Icon" class="workshop-icon">
+                        <img src="datascience.png.jpeg" alt="Data Science Icon" class="workshop-icon">
                     </div>
                     <h3>Data Science with Power BI</h3>
-                    <p>Learn audience metrics and technical foundations of Data Science.</p>
+                    
+                    <div class="detailed-description">
+                        <p>Transition data into strategic decisions using **Data Analysis and Visualization**.</p>
+                        <ul>
+                            <li><i class="fas fa-chart-line"></i> Data Cleaning and Exploratory Data Analysis (EDA)</li>
+                            <li><i class="fas fa-database"></i> Power BI Mastery for interactive dashboards</li>
+                            <li><i class="fas fa-calculator"></i> Statistical Foundations for Data Science</li>
+                        </ul>
+                    </div>
                     
                     <div class="cert-badge">
                         <i class="fas fa-medal"></i> Physical & E-Certificate
@@ -118,11 +144,19 @@
 
                 <div class="card">
                     <div class="icon-box">
-                        <img src="assets/ai-workshop.png" alt="AI Brain Icon" class="workshop-icon">
+                        <img src="ai.png.jpeg" alt="AI Brain Icon" class="workshop-icon">
                     </div>
                     <h3>AI & Computer Vision</h3>
-                    <p>Deep dive into Neural Networks and Computer Vision magic.</p>
                     
+                    <div class="detailed-description">
+                        <p>Explore the mechanics of modern AI, focusing on image and video processing.</p>
+                        <ul>
+                            <li><i class="fas fa-brain"></i> Neural Networks and Deep Learning Fundamentals</li>
+                            <li><i class="fas fa-eye"></i> Introduction to OpenCV and image manipulation</li>
+                            <li><i class="fas fa-robot"></i> Building basic machine learning models</li>
+                        </ul>
+                    </div>
+
                     <div class="cert-badge">
                         <i class="fas fa-medal"></i> Physical & E-Certificate
                     </div>
@@ -134,12 +168,37 @@
                 </div>
 
             </div>
+        </div>
+    </section>
+
+    <section id="registration-options" class="registration-section">
+        <div class="container">
+            <h2 class="section-title">Select Your Workshop & Register</h2>
+            <p class="section-subtext">Click the button below for your chosen workshop to proceed to the secure payment link.</p>
             
-            <div class="center-btn">
-                <a href="#register" class="btn-primary-large">Secure Your Spot</a>
+            <div class="registration-links-grid">
+                
+                <div class="registration-link-item">
+                    <h3>Python for Beginners</h3>
+                    <a href="#payment-link-python" target="_blank" class="btn-primary-large">Register for Python</a>
+                </div>
+
+                <div class="registration-link-item">
+                    <h3>Data Science with Power BI</h3>
+                    <a href="#payment-link-datascience" target="_blank" class="btn-primary-large">Register for Data Science</a>
+                </div>
+
+                <div class="registration-link-item">
+                    <h3>AI & Computer Vision</h3>
+                    <a href="#payment-link-ai" target="_blank" class="btn-primary-large">Register for AI</a>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <section id="contact-form" class="contact-form-section">
+        </section>
 
     <footer id="contact">
         <div class="footer-content">

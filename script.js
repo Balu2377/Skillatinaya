@@ -4,19 +4,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
 
-    hamburger.addEventListener('click', () => {
-        // Toggles the 'active' class to show/hide the menu (styled in CSS)
-        navLinks.classList.toggle('active');
-    });
-
-    // Close menu when a link is clicked on mobile
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-            }
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            // Toggles the 'active' class to show/hide the menu (styled in CSS)
+            navLinks.classList.toggle('active');
         });
-    });
+
+        // Close menu when a link is clicked on mobile
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    }
 
 
     // --- 2. Smooth Scrolling for Navbar Links ---
@@ -54,8 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         queryForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // This is a front-end success message.
-            // For actual email sending, you must integrate a service like Formspree or Netlify Forms.
+            // Front-end success message.
             alert("Query submitted successfully! Our team will contact you shortly.");
             
             queryForm.reset();

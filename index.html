@@ -1,86 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Skillatinaya Workshops</title>
-<link rel="stylesheet" href="styles.css">
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skillatinaya Workshops</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header>
-  <nav>
-    <div class="logo">Skillatinaya</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#workshops">Workshops</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="https://rzp.io/rzp/skillatinayadatascience" target="_blank" class="btn-register">Register</a></li>
-    </ul>
-    <div class="burger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </nav>
-</header>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">Skillatinaya</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#workshops">Workshops</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<section id="home" class="hero" data-aos="fade-up">
-  <div class="hero-text">
-    <h1>Learn, Practice, Get Certified</h1>
-    <p>Hands-on workshops for college students in AI, ML, Python and more.</p>
-    <a href="https://rzp.io/rzp/skillatinayadatascience" target="_blank" class="btn">Register Now</a>
-  </div>
-  <div class="hero-image">
-    <img src="images/hero.jpg" alt="Workshops">
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Learn & Grow with Skillatinaya Workshops</h1>
+            <p>Hands-on workshops with certifications for college students</p>
+            <button id="exploreBtn">Explore Workshops</button>
+        </div>
+    </section>
 
-<section id="about" data-aos="fade-right">
-  <div class="container">
-    <h2>About Us</h2>
-    <p>Skillatinaya Workshops bridges the gap between academics and industry with practical skill-building workshops.</p>
-    <img src="images/about.jpg" alt="About Image">
-  </div>
-</section>
+    <!-- Workshops Section -->
+    <section class="workshops" id="workshops">
+        <h2>Our Workshops</h2>
+        <div class="workshop-cards">
+            <!-- Data Science Workshop -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581091012184-3c4b77e3f7c7?auto=format&fit=crop&w=800&q=80" alt="Data Science">
+                <div class="card-content">
+                    <h3>Data Science with Power BI</h3>
+                    <p>Learn Data Science concepts and create powerful dashboards using Power BI.</p>
+                    <button onclick="window.open('https://rzp.io/rzp/skillatinayadatascience','_blank')">Enroll Now</button>
+                </div>
+            </div>
 
-<section id="workshops" data-aos="fade-left">
-  <h2>Our Workshops</h2>
-  <div class="workshop-cards">
-    <div class="card">
-      <img src="images/python.jpg" alt="Python">
-      <h3>Python for Beginners</h3>
-      <p>Learn Python from scratch with projects and certification.</p>
-      <a href="https://rzp.io/rzp/skillatinayadatascience" target="_blank" class="btn">Register</a>
-    </div>
-    <div class="card">
-      <img src="images/datascience.jpg" alt="Data Science">
-      <h3>Data Science & ML</h3>
-      <p>Hands-on machine learning workshops with real-life datasets.</p>
-      <a href="https://rzp.io/rzp/skillatinayadatascience" target="_blank" class="btn">Register</a>
-    </div>
-    <div class="card">
-      <img src="images/ai.jpg" alt="AI">
-      <h3>AI & Computer Vision</h3>
-      <p>Deep dive into AI projects using CNN and OpenCV.</p>
-      <a href="https://rzp.io/rzp/skillatinayadatascience" target="_blank" class="btn">Register</a>
-    </div>
-  </div>
-</section>
+            <!-- Python Workshop -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581090700227-8cf7d3ffb090?auto=format&fit=crop&w=800&q=80" alt="Python">
+                <div class="card-content">
+                    <h3>Python for Beginners</h3>
+                    <p>Get started with Python programming and build a strong foundation in coding.</p>
+                    <button onclick="window.open('https://rzp.io/rzp/skillatinayapfb','_blank')">Enroll Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="contact" data-aos="fade-up">
-  <h2>Contact & Register</h2>
-  <p>Email us at <a href="mailto:info@skillatinaya.com">info@skillatinaya.com</a></p>
-  <p>Or register via <a href="https://rzp.io/rzp/skillatinayadatascience" target="_blank">Payment Link</a></p>
-</section>
+    <!-- Footer -->
+    <footer id="contact">
+        <p>Contact us: skillatinaya@example.com</p>
+        <p>&copy; 2025 Skillatinaya Workshops. All rights reserved.</p>
+    </footer>
 
-<footer>
-  <p>© 2025 Skillatinaya Workshops</p>
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

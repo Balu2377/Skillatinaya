@@ -46,7 +46,6 @@ body {
     height: 40px; /* Adjust size as needed */
     width: auto;
     margin-right: 10px;
-    filter: brightness(0) invert(1); /* Makes the logo white if it's a dark image */
 }
 .logo-text {
     /* Ensures 'Skillatinaya' text acts as a fallback or complement */

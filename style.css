@@ -8,6 +8,8 @@
     --text-grey: #7f8c8d;
     --white: #ffffff;
     --bg-gradient-main: linear-gradient(160deg, var(--accent-pink) 0%, var(--secondary-purple) 50%, var(--primary-purple) 100%);
+    /* NEW: Gradient for Workshop Cards */
+    --card-gradient: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); 
 }
 
 * {
@@ -21,7 +23,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* --- UPDATED BODY STYLE FOR FULL BACKGROUND IMAGE --- */
+/* --- UPDATED BODY STYLE: Reverting to initial background image setting --- */
 body {
     background-image: url('website-bg.jpg'); /* 🚨 CHANGE THIS FILENAME IF NEEDED! 🚨 */
     background-repeat: no-repeat;
@@ -32,12 +34,14 @@ body {
     color: var(--text-dark);
 }
 
-/* --- Content sections to make text legible against the background image --- */
+/* 🔄 Reverted: Content sections now use semi-transparent white overlay 
+   to show background image through, and padding is set here. */
 .about-section, 
 .workshops-section, 
 .registration-section, 
 .contact-form-section {
     background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white overlay */
+    padding: 80px 0;
 }
 
 a {
@@ -56,12 +60,19 @@ ul {
     padding: 0 30px;
 }
 
+/* 🎨 NEW: Section Title Background Styling */
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
     color: var(--primary-purple);
     margin-bottom: 40px;
+    display: inline-block; /* Allows background color to wrap text */
+    padding: 10px 25px;
+    border-radius: 5px;
+    /* Using a subtle, light background color */
+    background-color: rgba(230, 230, 250, 0.8); /* Light Lavender */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 /* --- Buttons --- */
@@ -166,11 +177,9 @@ ul {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
-    /* Fix: Ensures hamburger icon is white and not affected by the mobile menu blue background */
     color: var(--white); 
 }
 
-/* Fix: Ensures the Register button is hidden on mobile when the hamburger menu is shown */
 @media (max-width: 768px) {
     .navbar .btn-nav {
         display: none; 
@@ -278,10 +287,6 @@ ul {
 
 
 /* --- 4. About Us Section --- */
-.about-section {
-    padding: 80px 0;
-}
-
 .about-content {
     display: flex;
     align-items: center;
@@ -293,7 +298,7 @@ ul {
 }
 
 .about-text h2 {
-    text-align: left;
+    /* Removed text-align: left; here because it's handled by .section-title */
     color: var(--text-dark);
     margin-bottom: 20px;
 }
@@ -319,7 +324,6 @@ ul {
 
 .features-list {
     margin-top: 40px;
-    /* Updated grid for 4 items, making sure they wrap nicely */
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px 20px;
@@ -331,7 +335,6 @@ ul {
     gap: 15px;
 }
 
-/* NEW: MSME icon color */
 .feature-item i {
     font-size: 2rem;
     color: var(--accent-pink);
@@ -350,10 +353,6 @@ ul {
 }
 
 /* --- 5. Workshops Section --- */
-.workshops-section {
-    padding: 80px 0;
-}
-
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -361,23 +360,18 @@ ul {
     margin-top: 40px;
 }
 
-/* Keyframes for the Workshop Card animation */
-@keyframes colorPulse {
-    0% { background: var(--primary-purple); }
-    50% { background: var(--secondary-purple); }
-    100% { background: var(--primary-purple); }
-}
+/* ❌ Removed: colorPulse keyframes */
 
+/* 🎨 NEW: Workshop Card Gradient Background, no animation */
 .card {
-    background: var(--primary-purple);
+    background: var(--card-gradient); 
     color: var(--white);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    /* Apply color animation */
-    animation: colorPulse 10s infinite ease-in-out;
+    /* Removed animation: colorPulse 10s infinite ease-in-out; */
 }
 
 .card:hover {
@@ -389,10 +383,10 @@ ul {
     margin-bottom: 20px;
 }
 
-/* NEW: Workshop Card Image Size Increase */
+/* Workshop Card Image Size Increase */
 .workshop-icon {
-    width: 80px; /* Increased size */
-    height: 80px; /* Increased size */
+    width: 80px; 
+    height: 80px; 
     border-radius: 10px;
 }
 
@@ -464,11 +458,6 @@ ul {
 
 
 /* --- 6. Registration Links Section --- */
-.registration-section {
-    padding: 80px 50px;
-    text-align: center;
-}
-
 .registration-section .section-title {
     color: var(--text-dark);
 }
@@ -512,11 +501,6 @@ ul {
 
 
 /* --- 7. Contact Form Section --- */
-.contact-form-section {
-    padding: 80px 50px;
-    text-align: center;
-}
-
 .contact-form-section .section-title {
     color: var(--text-dark);
     margin-bottom: 10px;
@@ -611,7 +595,7 @@ footer {
     margin-bottom: 20px;
 }
 
-/* Footer Contact Information Styling (from previous step) */
+/* Footer Contact Information Styling */
 .footer-content .contact-info {
     margin-bottom: 25px;
     margin-top: 15px;
@@ -701,7 +685,6 @@ footer {
         top: 75px; 
         left: 0;
         width: 100%;
-        /* Fix: Use semi-transparent background so links are visible without the blue overlay */
         background-color: rgba(74, 0, 224, 0.95); 
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         z-index: 999;
@@ -799,6 +782,11 @@ footer {
     .btn-primary, .btn-secondary, .btn-primary-large {
         width: 100%;
         padding: 12px 20px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        padding: 8px 15px;
     }
 }
 

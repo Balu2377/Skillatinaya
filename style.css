@@ -23,7 +23,7 @@ html {
 
 /* --- UPDATED BODY STYLE: Using image with semi-transparent sections --- */
 body {
-    background-image: url('website-bg.jpg'); /* 🚨 CHANGE THIS FILENAME IF NEEDED! 🚨 */
+    background-image: url('website-bg.png'); /* 🚨 CHANGE THIS FILENAME IF NEEDED! 🚨 */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

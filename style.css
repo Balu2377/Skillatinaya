@@ -7,8 +7,9 @@
     --text-dark: #2c3e50;
     --text-grey: #7f8c8d;
     --white: #ffffff;
-    --light-lavender: #f0f0f8; /* New Light Base Color */
-    --light-pink: #ffe8f0;    /* New Light Accent Color */
+    --light-lavender: #f0f0f8;
+    --light-pink: #ffe8f0;
+    --dark-grey-bg: #f5f5f5; /* New Darker Grey Base for contrast */
     --bg-gradient-main: linear-gradient(160deg, var(--accent-pink) 0%, var(--secondary-purple) 50%, var(--primary-purple) 100%);
 }
 
@@ -25,7 +26,7 @@ html {
 
 /* --- UPDATED BODY STYLE: Using image with semi-transparent sections --- */
 body {
-    background-image: url('website-bg.png'); /* 🚨 Ensure your filename (.png or .jpg) is correct here 🚨 */
+    background-image: url('website-bg.png'); /* 🚨 Ensure your filename (.png or .jpg) and path is correct here 🚨 */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -41,12 +42,13 @@ body {
 }
 
 .workshops-section {
-    background-color: var(--white); /* White for better contrast with colorful cards */
+    background-color: var(--white); /* White */
     padding: 80px 0;
 }
 
 .certifications-section {
-    background-color: var(--light-pink); /* Light Pink Accent */
+    /* *** MODIFIED: Changed background to White *** */
+    background-color: var(--white); 
     padding: 80px 0;
 }
 
@@ -56,7 +58,8 @@ body {
 }
 
 .contact-form-section {
-    background-color: var(--white); /* White for a clean form look */
+    /* *** MODIFIED: Changed background to Dark Grey *** */
+    background-color: var(--dark-grey-bg); 
     padding: 80px 0;
 }
 /* END OF MODIFIED SECTION BACKGROUNDS */

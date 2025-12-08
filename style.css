@@ -390,8 +390,8 @@ ul {
 /* Workshop Card Image Size Increase */
 .workshop-icon {
     /* *** MODIFIED: Wider Workshop Images *** */
-    width: 180px; 
-    height: 110px; 
+    width: 200px; 
+    height: 120px; 
     border-radius: 10px;
 }
 
@@ -476,7 +476,7 @@ ul {
 }
 
 .certificate-display {
-    max-width: 1000px; 
+    max-width: 800px; 
     margin: 0 auto;
     padding: 20px;
     background: var(--white);
@@ -485,7 +485,7 @@ ul {
 }
 
 .sample-certificate-image {
-    width: 50%; 
+    width: 100%; 
     height: auto;
     display: block;
     border-radius: 8px; 

@@ -8,8 +8,6 @@
     --text-grey: #7f8c8d;
     --white: #ffffff;
     --bg-gradient-main: linear-gradient(160deg, var(--accent-pink) 0%, var(--secondary-purple) 50%, var(--primary-purple) 100%);
-    /* NEW: Gradient for Workshop Cards */
-    --card-gradient: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); 
 }
 
 * {
@@ -23,7 +21,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* --- UPDATED BODY STYLE: Reverting to initial background image setting --- */
+/* --- UPDATED BODY STYLE: Using image with semi-transparent sections --- */
 body {
     background-image: url('website-bg.jpg'); /* 🚨 CHANGE THIS FILENAME IF NEEDED! 🚨 */
     background-repeat: no-repeat;
@@ -34,13 +32,13 @@ body {
     color: var(--text-dark);
 }
 
-/* 🔄 Reverted: Content sections now use semi-transparent white overlay 
-   to show background image through, and padding is set here. */
+/* Content sections use semi-transparent white overlay */
 .about-section, 
 .workshops-section, 
+.certifications-section, 
 .registration-section, 
 .contact-form-section {
-    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white overlay */
+    background-color: rgba(255, 255, 255, 0.95); 
     padding: 80px 0;
 }
 
@@ -60,17 +58,16 @@ ul {
     padding: 0 30px;
 }
 
-/* 🎨 NEW: Section Title Background Styling */
+/* 🎨 Section Title Background Styling */
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
     color: var(--primary-purple);
     margin-bottom: 40px;
-    display: inline-block; /* Allows background color to wrap text */
+    display: inline-block; 
     padding: 10px 25px;
     border-radius: 5px;
-    /* Using a subtle, light background color */
     background-color: rgba(230, 230, 250, 0.8); /* Light Lavender */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
@@ -135,13 +132,15 @@ ul {
 }
 
 .logo-img {
-    height: 45px;
+    /* *** MODIFIED: Larger Logo Image *** */
+    height: 55px; 
     width: auto;
-    margin-right: 10px;
+    margin-right: 12px;
 }
 
 .logo-text {
-    font-size: 1.8rem;
+    /* *** MODIFIED: Larger Logo Text *** */
+    font-size: 2rem; 
     font-weight: 700;
     color: var(--white);
 }
@@ -298,7 +297,6 @@ ul {
 }
 
 .about-text h2 {
-    /* Removed text-align: left; here because it's handled by .section-title */
     color: var(--text-dark);
     margin-bottom: 20px;
 }
@@ -360,18 +358,24 @@ ul {
     margin-top: 40px;
 }
 
-/* ❌ Removed: colorPulse keyframes */
+/* 🎨 Keyframes for the Workshop Card color animation */
+@keyframes colorPulse {
+    0% { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); }
+    33% { background: linear-gradient(135deg, var(--accent-pink), var(--primary-purple)); }
+    66% { background: linear-gradient(135deg, var(--secondary-purple), var(--accent-pink)); }
+    100% { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); }
+}
 
-/* 🎨 NEW: Workshop Card Gradient Background, no animation */
+/* 🎨 Workshop Card Gradient Background with animation */
 .card {
-    background: var(--card-gradient); 
+    background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); 
     color: var(--white);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    /* Removed animation: colorPulse 10s infinite ease-in-out; */
+    animation: colorPulse 12s infinite ease-in-out; 
 }
 
 .card:hover {
@@ -385,8 +389,9 @@ ul {
 
 /* Workshop Card Image Size Increase */
 .workshop-icon {
-    width: 80px; 
-    height: 80px; 
+    /* *** MODIFIED: Wider Workshop Images *** */
+    width: 110px; 
+    height: 110px; 
     border-radius: 10px;
 }
 
@@ -454,6 +459,36 @@ ul {
 .detailed-description ul li i {
     margin-right: 8px;
     color: var(--accent-gold);
+}
+
+
+/* --- 5.5 Certifications Section --- */
+.certifications-section {
+    background-color: rgba(255, 255, 255, 0.95); 
+    padding: 80px 0;
+    text-align: center;
+}
+
+.certifications-section .section-subtext {
+    font-size: 1.1rem;
+    color: var(--text-grey);
+    margin-bottom: 40px;
+}
+
+.certificate-display {
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); 
+}
+
+.sample-certificate-image {
+    width: 100%; 
+    height: auto;
+    display: block;
+    border-radius: 8px; 
 }
 
 
@@ -761,6 +796,10 @@ footer {
     /* Form Section Adjustments */
     .contact-form-section, .registration-section {
         padding: 50px 25px;
+    }
+    
+    .certificate-display {
+        padding: 10px;
     }
 }
 

@@ -531,9 +531,20 @@ ul {
 
 .registration-links-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* Default setup for the 3 course links */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
     align-items: center;
+}
+
+/* Specific grid overrides for the primary links */
+.registration-links-grid.primary-links {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Specific grid definition for the secondary links (default, 3 columns) */
+.registration-links-grid.secondary-links {
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .registration-link-item {
@@ -542,6 +553,10 @@ ul {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s;
+    height: 100%; /* Ensures all items in the grid are the same height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .registration-link-item:hover {
@@ -551,13 +566,53 @@ ul {
 
 .registration-link-item h3 {
     color: var(--text-dark);
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduced from 20px */
     font-weight: 600;
 }
 
-.registration-link-item .btn-primary-large {
+/* Ensure the Razorpay button and the anchor tag link stretch the same way */
+.registration-link-item .btn-primary-large,
+.registration-link-item .razorpay-embed-btn {
     width: 100%;
     text-transform: uppercase;
+    margin-top: auto; /* Pushes the button to the bottom of the flex container */
+}
+
+/* --- NEW STYLES: Inline Benefits inside Registration Boxes --- */
+.registration-link-item .inline-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 20px 0; /* Space above and below the list */
+    text-align: left;
+    border-top: 1px solid #eee; /* Separator line above the benefits */
+    padding-top: 15px;
+}
+
+.registration-link-item .inline-benefits li {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem; /* Slightly smaller font size inside the box */
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.registration-link-item .inline-benefits li i {
+    color: var(--primary-purple); /* Use purple for the tick mark for contrast */
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+.registration-link-item p {
+    /* Ensure the paragraph below the benefits is spaced well, pushing the button down */
+    margin-bottom: 20px;
+    color: var(--text-grey);
+}
+
+/* --- OPTIONAL: Adjust Razorpay Button to match your theme size --- */
+.registration-link-item .razorpay-embed-btn {
+    /* This centers the button if it's smaller than the box */
+    text-align: center; 
+    margin-bottom: 15px; /* Add some margin below the button if needed */
 }
 
 
@@ -719,6 +774,7 @@ footer {
         padding: 0 25px;
     }
     
+    /* NEW: All registration grids stack into a single column on tablet/mobile */
     .registration-links-grid {
         grid-template-columns: 1fr;
     }

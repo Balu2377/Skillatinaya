@@ -774,9 +774,11 @@ footer {
         padding: 0 25px;
     }
     
-    /* NEW: All registration grids stack into a single column on tablet/mobile */
-    .registration-links-grid {
-        grid-template-columns: 1fr;
+    /* FIX: Force all registration grids (2-column and 3-column) to stack into a single column on tablet/mobile */
+    .registration-links-grid,
+    .registration-links-grid.primary-links,
+    .registration-links-grid.secondary-links {
+        grid-template-columns: 1fr !important; /* !important ensures this rule takes precedence */
     }
 }
 

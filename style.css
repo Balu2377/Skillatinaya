@@ -778,7 +778,7 @@ footer {
     .registration-links-grid,
     .registration-links-grid.primary-links,
     .registration-links-grid.secondary-links {
-        grid-template-columns: 1fr !important; /* !important ensures this rule takes precedence */
+        grid-template-columns: 1fr !important; /* This is the key line for stacking */
     }
 }
 

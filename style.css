@@ -1,16 +1,48 @@
-/* --- 1. Global Variables & Reset --- */
+/*
+ * ==========================================================
+ * COMPLETE STYLESHEET (style.css)
+ * Including Playful/Attractive Animations & Mobile Fixes
+ * ==========================================================
+ */
+
+/* --- 1. Global Variables & Reset (Playful Scheme) --- */
 :root {
-    --primary-purple: #4A00E0;
-    --secondary-purple: #8E2DE2;
-    --accent-pink: #F05F9A;
-    --accent-gold: #FFD700;
-    --text-dark: #2c3e50;
-    --text-grey: #7f8c8d;
+    --primary-purple: #6A1B9A; /* Richer, softer purple */
+    --secondary-purple: #9C27B0; /* Brighter purple */
+    --accent-pink: #FF6E9D; /* Brighter, playful pink */
+    --accent-gold: #FFC107; /* Warm gold/yellow for highlights */
+    --text-dark: #37474F; /* Dark slate text */
+    --text-grey: #78909C; /* Soft grey text */
     --white: #ffffff;
-    --light-lavender: #f0f0f8;
-    --light-pink: #ffe8f0;
-    --dark-grey-bg: #f5f5f5; /* Light Dark Grey for Contact Form */
-    --bg-gradient-main: linear-gradient(160deg, var(--accent-pink) 0%, var(--secondary-purple) 50%, var(--primary-purple) 100%);
+    --light-lavender: #F3F4F7; /* Very light, almost white background */
+    --light-pink: #FFEBEE;
+    --dark-grey-bg: #EFEFEF; /* Lightest possible grey background */
+    --bg-gradient-main: linear-gradient(135deg, var(--secondary-purple) 0%, var(--primary-purple) 100%); 
+}
+
+/* --- Keyframes for Dynamic Hero Background --- */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* --- Keyframes for Logo Bounce (More Playful) --- */
+@keyframes logoPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); } 
+}
+
+/* --- Keyframes for Hero Text/Image Animation (Subtle entrance) --- */
+@keyframes fadeInSlide {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Keyframes for Mobile Menu Dropdown --- */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 * {
@@ -24,36 +56,25 @@ html {
     scroll-behavior: smooth;
 }
 
-/* 🚨 FIX: Body Background Image Removed 🚨 */
+/* 🚨 Body Background Fix (Flat White) 🚨 */
 body {
-    background-image: none; /* Removed the image */
-    background-color: var(--white); /* Set a clean white base color */
+    background-image: none;
+    background-color: var(--white);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     line-height: 1.6;
-    /* overflow-x: hidden; */ /* Removing this often helps with debugging layout issues */
     color: var(--text-dark);
 }
 
-/* 🎨 MODIFIED SECTION BACKGROUNDS (Kept specific colors for visual separation) */
-.about-section {
+/* 🎨 MODIFIED SECTION BACKGROUNDS (Softer Tones) */
+.about-section, .registration-section {
     background-color: var(--light-lavender); 
     padding: 80px 0;
 }
 
-.workshops-section {
+.workshops-section, .certifications-section {
     background-color: var(--white); 
-    padding: 80px 0;
-}
-
-.certifications-section {
-    background-color: var(--white); 
-    padding: 80px 0;
-}
-
-.registration-section {
-    background-color: var(--light-lavender); 
     padding: 80px 0;
 }
 
@@ -61,8 +82,6 @@ body {
     background-color: var(--dark-grey-bg); 
     padding: 80px 0;
 }
-/* END OF MODIFIED SECTION BACKGROUNDS */
-
 
 a {
     text-decoration: none;
@@ -80,7 +99,7 @@ ul {
     padding: 0 30px;
 }
 
-/* 🎨 Section Title Background Styling */
+/* 🎨 Section Title Styling - Playful Pill Shape */
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
@@ -89,34 +108,38 @@ ul {
     margin-bottom: 40px;
     display: inline-block; 
     padding: 10px 25px;
-    border-radius: 5px;
-    background-color: rgba(230, 230, 250, 0.8); /* Light Lavender */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 25px; /* More rounded pill shape */
+    background-color: var(--white);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s;
+}
+.section-title:hover {
+    background-color: var(--light-pink);
 }
 
-/* --- Buttons --- */
+/* --- Buttons - Playful Glow and Lift --- */
 .btn-primary, .btn-secondary, .btn-primary-large {
-    padding: 10px 25px;
+    padding: 12px 30px; 
     border-radius: 50px;
     font-weight: 600;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: pointer;
     text-align: center;
     display: inline-block;
+    border: none;
 }
 
 .btn-primary, .btn-primary-large {
     background: var(--accent-pink);
     color: var(--white);
-    border: 2px solid var(--accent-pink);
-    box-shadow: 0 4px 10px rgba(240, 95, 154, 0.4);
+    box-shadow: 0 8px 15px rgba(255, 110, 157, 0.5); 
 }
 
 .btn-primary:hover, .btn-primary-large:hover {
-    background: var(--primary-purple);
-    border-color: var(--primary-purple);
-    box-shadow: 0 4px 15px rgba(74, 0, 224, 0.6);
+    background: var(--secondary-purple); 
+    box-shadow: 0 10px 25px rgba(156, 39, 176, 0.6);
+    transform: translateY(-3px) scale(1.02); 
 }
 
 .btn-secondary {
@@ -126,12 +149,13 @@ ul {
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
 }
 
 .btn-primary-large {
-    padding: 15px 35px;
-    font-size: 1.1rem;
+    padding: 18px 40px;
+    font-size: 1.15rem;
 }
 
 /* --- 2. Navbar --- */
@@ -151,17 +175,22 @@ ul {
 .logo {
     display: flex;
     align-items: center;
+    transition: transform 0.3s;
 }
 
-/* 🚨 REFINED LOGO SIZE 🚨 */
+/* 🚨 Logo Animation 🚨 */
+.logo:hover {
+    animation: logoPulse 1s ease-in-out;
+}
+
 .logo-img {
-    height: 45px; /* Slightly smaller for better mobile fit */
+    height: 45px; 
     width: auto;
     margin-right: 12px;
 }
 
 .logo-text {
-    font-size: 1.8rem; /* Slightly smaller for better mobile fit */
+    font-size: 1.8rem; 
     font-weight: 700;
     color: var(--white);
 }
@@ -176,6 +205,12 @@ ul {
     font-weight: 500;
     padding: 5px 0;
     position: relative;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-gold);
+    text-shadow: 0 0 8px rgba(255, 193, 7, 0.8);
 }
 
 .nav-links a::after {
@@ -207,9 +242,13 @@ ul {
 }
 
 
-/* --- 3. Hero Section --- */
+/* --- 3. Hero Section - Animated & Lively --- */
 .hero-section {
+    /* 🚨 Animated Gradient 🚨 */
     background: var(--bg-gradient-main);
+    background-size: 200% 200%; 
+    animation: gradientShift 15s ease infinite;
+
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -231,10 +270,12 @@ ul {
     flex: 1;
     color: var(--white);
     max-width: 55%;
+    /* 🚨 Fade-in animation 🚨 */
+    animation: fadeInSlide 1s ease-out; 
 }
 
 .hero-text h1 {
-    font-size: 3.8rem;
+    font-size: 4rem; 
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 20px;
@@ -242,6 +283,7 @@ ul {
 
 .highlight-text {
     color: var(--accent-gold);
+    text-shadow: 0 0 15px rgba(255, 193, 7, 0.5); 
 }
 
 .hero-text p {
@@ -259,23 +301,29 @@ ul {
     flex: 1;
     max-width: 40%;
     text-align: right;
+    /* 🚨 Delayed fade-in animation 🚨 */
+    animation: fadeInSlide 1s ease-out 0.2s backwards; 
 }
 
 .hero-image img {
     max-width: 100%;
     height: auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 20px; 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.5s;
+}
+.hero-image img:hover {
+    transform: scale(1.02);
 }
 
-/* Floating Shapes - Should not cause overflow, but included for completeness */
+/* Floating Shapes - More subtle */
 .floating-shape {
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 50%;
     z-index: 1;
-    filter: blur(50px);
-    animation: float 10s infinite ease-in-out;
+    filter: blur(60px);
+    animation: float 12s infinite ease-in-out; 
 }
 
 .shape-1 {
@@ -338,7 +386,7 @@ ul {
     max-width: 100%;
     height: auto;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .features-list {
@@ -354,10 +402,12 @@ ul {
     gap: 15px;
 }
 
+/* 🚨 Playful icon shadow 🚨 */
 .feature-item i {
     font-size: 2rem;
     color: var(--accent-pink);
     min-width: 35px;
+    text-shadow: 0 1px 3px rgba(255, 110, 157, 0.5); 
 }
 
 .feature-item h4 {
@@ -383,29 +433,21 @@ ul {
     margin-top: 40px;
 }
 
-/* 🎨 Keyframes for the Workshop Card color animation */
-@keyframes colorPulse {
-    0% { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); }
-    33% { background: linear-gradient(135deg, var(--accent-pink), var(--primary-purple)); }
-    66% { background: linear-gradient(135deg, var(--secondary-purple), var(--accent-pink)); }
-    100% { background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); }
-}
-
-/* 🎨 Workshop Card Gradient Background with animation */
+/* 🎨 Workshop Card Gradient with Deep Lift Hover */
 .card {
     background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); 
     color: var(--white);
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    animation: colorPulse 12s infinite ease-in-out; 
+    transition: transform 0.4s, box-shadow 0.4s;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    /* 🚨 Deepest Card Lift 🚨 */
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
 }
 
 .icon-box {
@@ -528,37 +570,36 @@ ul {
 
 .registration-links-grid {
     display: grid;
-    /* Default setup for the 3 course links */
     grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
     align-items: center;
 }
 
-/* Specific grid overrides for the primary links */
 .registration-links-grid.primary-links {
     grid-template-columns: repeat(2, 1fr);
 }
 
-/* Specific grid definition for the secondary links (default, 3 columns) */
 .registration-links-grid.secondary-links {
     grid-template-columns: repeat(3, 1fr);
 }
 
+/* 🚨 Registration Item Attractive Lift 🚨 */
 .registration-link-item {
-    background: #f7f7f7;
+    background: var(--white);
     padding: 30px 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s;
-    height: 100%; /* Ensures all items in the grid are the same height */
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 1px solid var(--light-lavender);
 }
 
 .registration-link-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .registration-link-item h3 {
@@ -567,45 +608,48 @@ ul {
     font-weight: 600;
 }
 
-/* Ensure the Razorpay button and the anchor tag link stretch the same way */
 .registration-link-item .btn-primary-large,
 .registration-link-item .razorpay-embed-btn {
     width: 100%;
     text-transform: uppercase;
-    margin-top: auto; /* Pushes the button to the bottom of the flex container */
+    margin-top: auto; 
 }
 
-/* --- NEW STYLES: Inline Benefits inside Registration Boxes --- */
+/* --- Inline Benefits inside Registration Boxes (Playful Checkmark) --- */
 .registration-link-item .inline-benefits {
     list-style: none;
     padding: 0;
-    margin: 15px 0 20px 0; /* Space above and below the list */
+    margin: 15px 0 20px 0; 
     text-align: left;
-    border-top: 1px solid #eee; /* Separator line above the benefits */
+    border-top: 1px solid #eee; 
     padding-top: 15px;
 }
 
 .registration-link-item .inline-benefits li {
     display: flex;
     align-items: center;
-    font-size: 0.95rem; /* Slightly smaller font size inside the box */
+    font-size: 0.95rem; 
     color: var(--text-dark);
     margin-bottom: 8px;
 }
 
+/* 🚨 Playful Checkmark Color & Hover Hop 🚨 */
 .registration-link-item .inline-benefits li i {
-    color: var(--primary-purple); /* Use purple for the tick mark for contrast */
+    color: var(--accent-pink); 
     margin-right: 8px;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+}
+
+.registration-link-item .inline-benefits li:hover i {
+    transform: scale(1.1); 
 }
 
 .registration-link-item p {
-    /* Ensure the paragraph below the benefits is spaced well, pushing the button down */
     margin-bottom: 20px;
     color: var(--text-grey);
 }
 
-/* --- OPTIONAL: Adjust Razorpay Button to match your theme size --- */
 .registration-link-item .razorpay-embed-btn {
     text-align: center; 
     margin-bottom: 15px; 
@@ -629,8 +673,8 @@ ul {
     margin: 0 auto;
     background: var(--white);
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: left;
 }
 
@@ -656,11 +700,12 @@ ul {
     transition: border-color 0.3s;
 }
 
+/* 🚨 Playful Focus Glow 🚨 */
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--accent-pink);
     outline: none;
-    box-shadow: 0 0 5px rgba(255, 75, 139, 0.2);
+    box-shadow: 0 0 10px rgba(255, 110, 157, 0.5);
 }
 
 .query-form .btn-primary-large {
@@ -769,7 +814,7 @@ footer {
         padding: 0 25px;
     }
     
-    /* 🚨 CRITICAL FIX: Ensure ALL registration grids stack vertically 🚨 */
+    /* 🚨 CRITICAL FIX: Ensures all grids stack vertically on smaller screens 🚨 */
     .registration-links-grid,
     .registration-links-grid.primary-links,
     .registration-links-grid.secondary-links {
@@ -783,7 +828,6 @@ footer {
         padding: 15px 25px;
     }
     
-    /* Logo adjustment on mobile */
     .logo-img {
         height: 35px;
     }
@@ -805,7 +849,7 @@ footer {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 65px; /* Adjusted slightly lower due to smaller logo */
+        top: 65px; 
         left: 0;
         width: 100%;
         background-color: rgba(74, 0, 224, 0.95); 
@@ -915,9 +959,4 @@ footer {
         font-size: 2rem;
         padding: 8px 15px;
     }
-}
-
-@keyframes fadeInDown {
-    0% { opacity: 0; transform: translateY(-20px); }
-    100% { opacity: 1; transform: translateY(0); }
 }
